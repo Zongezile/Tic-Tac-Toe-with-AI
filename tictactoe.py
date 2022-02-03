@@ -126,6 +126,8 @@ def maxi(symbol, vs, alpha, beta):
                     x = mx
                     y = my
                 table[mx][my] = ' '
+                if value >= beta:
+                    return value, x, y
                 if value > alpha:
                     alpha = value
 
@@ -155,6 +157,8 @@ def mini(symbol, vs, alpha, beta):
                     x = mx
                     y = my
                 table[mx][my] = ' '
+                if value <= alpha:
+                    return value, x, y
                 if value < beta:
                     beta = value
 
